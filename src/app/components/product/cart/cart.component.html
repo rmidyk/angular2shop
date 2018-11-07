@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-header style="text-align: left;">
+    <mat-card-title>Cart</mat-card-title>
+  </mat-card-header>
+  <mat-card-content *ngIf="productsInCart.length; else elseBlock">
+    <mat-list style="text-align: left;">
+      <mat-list-item *ngFor="let product of productsInCart; last as last;">{{product.name}} - {{product.price}}$
+        <mat-divider *ngIf="!last"
+          [inset]="true"></mat-divider>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Total: {{getTotal()}}$</mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <ng-template #elseBlock>
+    Empty!
+  </ng-template>
+
+  <mat-card-actions *ngIf="productsInCart.length">
+    <button mat-button
+      color="accent"
+      (click)="confirm()">Confirm Order</button>
+    <button mat-button
+      color="warn"
+      (click)="discard()">Discard</button>
+  </mat-card-actions>
+</mat-card>
