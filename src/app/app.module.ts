@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule, MatButtonModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
-import { ProductModule } from './components/product/product.module';
+
+import { ProductModule } from './modules/product/product.module';
+import { CartModule } from './modules/cart/cart.module';
 
 
 @NgModule({
@@ -15,7 +15,8 @@ import { ProductModule } from './components/product/product.module';
   imports: [
     BrowserModule,
     FlexLayoutModule,
-    ProductModule
+    ProductModule,
+    CartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Category } from '../enums/category.enum';
-import { IProductModel } from '../models/product.model';
-import { CartService } from '../services/cart.service';
+import { Category } from '../../../core/enums/category.enum';
+import { IProductModel } from '../../../core/models/product.model';
+import { CartService } from '../../../cart/services/cart.service';
 
 @Component({
   selector: 'app-product-list-item',
