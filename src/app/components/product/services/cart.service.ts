@@ -21,6 +21,10 @@ export class CartService {
     this.products.slice(index, 1);
   }
 
+  isInCart(product: IProductModel) {
+    return this.products.includes(product);
+  }
+
   constructor() {
     this.products = [];
   }

@@ -1,7 +1,7 @@
 <mat-card class="product-card">
   <mat-card-header style="text-align: left;">
     <mat-card-title>{{model.name}} - {{model.price}}$</mat-card-title>
-    <mat-card-subtitle>{{categoryName}}</mat-card-subtitle>
+    <mat-card-subtitle>{{getCategoryName()}}</mat-card-subtitle>
   </mat-card-header>
   <img mat-card-image
     src="{{model.imageUrl}}"

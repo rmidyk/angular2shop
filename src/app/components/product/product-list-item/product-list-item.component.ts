@@ -9,18 +9,8 @@ import { CartService } from '../services/cart.service';
   styleUrls: ['./product-list-item.component.less'],
 })
 export class ProductListItemComponent implements OnInit {
-  private _model: IProductModel;
-
   @Input()
-  set model(model: IProductModel) {
-    this._model = model;
-    this.categoryName = Category[this._model.category];
-  }
-
-  get model(): IProductModel {
-    return this._model;
-  }
-  categoryName: string;
+  model: IProductModel;
 
   constructor(private cartService: CartService) {
   }
@@ -28,13 +18,16 @@ export class ProductListItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  getCategoryName() {
+    return Category[this.model.category];
+  }
+
   buy() {
-    this.cartService.addProductToCart(this._model);
-    console.log('Bought!');
+    this.cartService.addProductToCart(this.model);
   }
 
   canBuy(): boolean {
-    return this.cartService.getProductsInCart().indexOf(this._model) == -1;
+    return !this.cartService.isInCart(this.model);
   }
 
 }

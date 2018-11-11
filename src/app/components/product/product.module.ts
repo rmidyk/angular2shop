@@ -17,7 +17,6 @@ import { CartComponent } from './cart/cart.component';
         CartComponent
     ],
     imports: [
-        BrowserModule,
         BrowserAnimationsModule,
         FlexLayoutModule,
         MatCardModule,
@@ -26,7 +25,6 @@ import { CartComponent } from './cart/cart.component';
         MatListModule
     ],
     exports: [
-        ProductListItemComponent,
         ProductListComponent,
         CartComponent
     ]
