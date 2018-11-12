@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
+import { CartService } from '../../../cart/services/cart.service';
 import { IProductModel } from '../../../core/models/product.model';
 import { Category } from '../../../core/enums/category.enum';
 
@@ -8,10 +9,16 @@ import { Category } from '../../../core/enums/category.enum';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.less']
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, AfterViewInit {
   products: IProductModel[];
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private cartService: CartService) { }
   ngOnInit() {
     this.products = this.productService.getProducts();
+  }
+  onBuy(product: IProductModel) {
+    this.cartService.addProductToCart(product);
+  }
+  ngAfterViewInit(): void {
+    console.log('ProductListComponent AfterViewInit');
   }
 }

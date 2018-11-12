@@ -4,6 +4,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 
+import { SharedModule } from './modules/shared/shared.module';
 import { ProductModule } from './modules/product/product.module';
 import { CartModule } from './modules/cart/cart.module';
 
@@ -15,6 +16,7 @@ import { CartModule } from './modules/cart/cart.module';
   imports: [
     BrowserModule,
     FlexLayoutModule,
+    SharedModule,
     ProductModule,
     CartModule
   ],

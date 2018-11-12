@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-header style="text-align: left;">
+    <mat-card-title>Cart</mat-card-title>
+  </mat-card-header>
+  <div *ngIf="cartItems.length; else elseBlock">
+    <mat-list style="text-align: left;">
+      <app-cart-list-item *ngFor="let cartItem of cartItems; last as last;"
+        [model]="cartItem"
+        (remove)="onRemove($event)"
+        appMouseHover>
+      </app-cart-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <div fxLayout="row"
+          fxLayoutAlign="space-between"
+          style="width: 100%;">
+          <div>Products: {{getProductsAmount()}}</div>
+          <div>Total: {{getTotalPrice()}}$</div>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <ng-template #elseBlock>
+    Empty!
+  </ng-template>
+
+  <mat-card-actions *ngIf="cartItems.length">
+    <button mat-button
+      color="accent"
+      (click)="confirm()">Confirm Order</button>
+    <button mat-button
+      color="warn"
+      (click)="discard()">Discard</button>
+  </mat-card-actions>
+</mat-card>

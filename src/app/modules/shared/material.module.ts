@@ -1,20 +1,23 @@
 import { NgModule } from '@angular/core';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule, MatButtonModule, MatDividerModule, MatListModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
+import { MatCardModule, MatButtonModule, MatDividerModule, MatListModule, MatIconModule } from '@angular/material';
+import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
-    declarations: [
-    ],
     imports: [
         BrowserAnimationsModule,
         FlexLayoutModule,
         MatCardModule,
         MatButtonModule,
         MatDividerModule,
-        MatListModule
+        MatListModule,
+        FormsModule,
+        MatInputModule,
+        MatIconModule
     ],
     exports: [
         BrowserAnimationsModule,
@@ -22,7 +25,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatCardModule,
         MatButtonModule,
         MatDividerModule,
-        MatListModule
+        MatListModule,
+        FormsModule,
+        MatInputModule,
+        MatIconModule
     ]
 })
 export class MaterialModule { }

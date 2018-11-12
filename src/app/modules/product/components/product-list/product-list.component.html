@@ -1,4 +1,5 @@
 <div fxLayout="row wrap">
   <app-product-list-item *ngFor="let product of products"
-    [model]="product"></app-product-list-item>
+    [model]="product"
+    (buy)="onBuy($event)"></app-product-list-item>
 </div>
