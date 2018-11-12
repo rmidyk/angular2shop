@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { MatCardModule, MatButtonModule, MatDividerModule, MatListModule, MatIconModule } from '@angular/material';
+import { MatCardModule, MatButtonModule, MatDividerModule, MatListModule, MatIconModule, MatToolbarModule } from '@angular/material';
 import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatSidenavModule } from '@angular/material/sidenav'
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatListModule,
         FormsModule,
         MatInputModule,
-        MatIconModule
+        MatIconModule,
+        MatSidenavModule,
+        MatToolbarModule
     ],
     exports: [
         BrowserAnimationsModule,
@@ -28,7 +31,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatListModule,
         FormsModule,
         MatInputModule,
-        MatIconModule
+        MatIconModule,
+        MatSidenavModule,
+        MatToolbarModule
     ]
 })
 export class MaterialModule { }

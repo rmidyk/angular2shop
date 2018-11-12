@@ -7,7 +7,7 @@ import { MouseHoverDirective } from './directives/mouse-hover.directive';
     MouseHoverDirective
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     MouseHoverDirective

@@ -11,7 +11,7 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     console.log(this.appTitle);
-    this.appTitle.nativeElement.innerText='Welcome to Bike shop!';
+   // this.appTitle.nativeElement.innerText='Welcome to Bike shop!';
   }
 
   title = 'shop';
