@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { IProductModel } from '../../core/models/product.model';
-import { CartItem } from '../../core/models/cart-item.model';
+import { IProductModel } from '../../product/models/product.model';
+import { CartItem } from '../models/cart-item.model';
 
 @Injectable({
   providedIn: 'root'
@@ -8,17 +8,21 @@ import { CartItem } from '../../core/models/cart-item.model';
 export class CartService {
   private cartItems: CartItem[];
 
+  constructor() {
+    this.cartItems = [];
+  }
+
   getCartItems() {
     return this.cartItems;
   }
 
-  addProductToCart(product: IProductModel) {
+  addProductToCart(product: IProductModel, quantity: number = 1) {
     var cartItem = this.cartItems.find(x => x.product == product);
     if (cartItem) {
-      cartItem.quantity++;
+      cartItem.quantity += quantity;
     } else {
       cartItem = new CartItem();
-      cartItem.quantity = 1;
+      cartItem.quantity = quantity;
       cartItem.product = product;
       this.cartItems.push(cartItem);
     }
@@ -43,7 +47,7 @@ export class CartService {
     }, 0);
   }
 
-  constructor() {
+  clearCart() {
     this.cartItems = [];
   }
 }

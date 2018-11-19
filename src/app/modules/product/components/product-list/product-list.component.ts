@@ -1,8 +1,8 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { CartService } from '../../../cart/services/cart.service';
-import { IProductModel } from '../../../core/models/product.model';
-import { Category } from '../../../core/enums/category.enum';
+import { IProductModel } from '../../models/product.model';
+import { Category } from '../../enums/category.enum';
 
 @Component({
   selector: 'app-product-list',

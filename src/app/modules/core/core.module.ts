@@ -6,10 +6,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ProductModule } from '../product/product.module';
 import { CartModule } from '../cart/cart.module';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 @NgModule({
     declarations: [
-        LayoutComponent
+        LayoutComponent,
+        ContactUsComponent
     ],
     imports: [
         FlexLayoutModule,

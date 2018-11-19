@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
-import { Category } from '../../../core/enums/category.enum';
-import { IProductModel } from '../../../core/models/product.model';
+import { Category } from '../../enums/category.enum';
+import { IProductModel } from '../../models/product.model';
 
 @Component({
   selector: 'app-product-list-item',

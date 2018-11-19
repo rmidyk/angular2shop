@@ -1,4 +1,4 @@
-import { IProductModel } from './product.model';
+import { IProductModel } from '../../product/models/product.model';
 
 export class CartItem {
     quantity: number;

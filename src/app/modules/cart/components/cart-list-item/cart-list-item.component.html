@@ -1,4 +1,4 @@
-<mat-list-item>
+<mat-list-item appSelect="1px solid black">
   <mat-form-field style="width: 15%;padding-right: 5px;">
     <input matInput
       min="1"
@@ -9,9 +9,10 @@
   <div>
     {{model.product.name}} - {{model.product.price}}$
   </div>
-  <button mat-icon-button (click)="onClick()">
-      <mat-icon>close</mat-icon>
-   </button>
+  <button mat-icon-button
+    (click)="onClick()">
+    <mat-icon>close</mat-icon>
+  </button>
 </mat-list-item>
 
 <mat-divider></mat-divider>

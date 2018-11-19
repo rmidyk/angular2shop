@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { ConstantsService, ConstantsServiceInstance } from './modules/core/services/constants.service'
 
 import { CoreModule } from './modules/core/core.module';
 import { SharedModule } from './modules/shared/shared.module';
@@ -16,13 +17,11 @@ import { CartModule } from './modules/cart/cart.module';
   ],
   imports: [
     BrowserModule,
-    CoreModule,
-    //SharedModule,
-    //FlexLayoutModule,
-    // ProductModule,
-    //CartModule
+    CoreModule
   ],
-  providers: [],
+  providers: [
+    { provide: ConstantsService, useValue: ConstantsServiceInstance }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

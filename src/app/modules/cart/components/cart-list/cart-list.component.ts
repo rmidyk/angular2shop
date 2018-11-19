@@ -1,7 +1,7 @@
 import { Component, OnInit, DoCheck, IterableDiffers } from '@angular/core';
 import { CartService } from '../../services/cart.service';
-import { IProductModel } from '../../../core/models/product.model';
-import { CartItem } from '../../../core/models/cart-item.model';
+import { IProductModel } from '../../../product/models/product.model';
+import { CartItem } from '../../models/cart-item.model';
 
 @Component({
   selector: 'app-cart',
@@ -9,12 +9,13 @@ import { CartItem } from '../../../core/models/cart-item.model';
   styleUrls: ['./cart-list.component.less']
 })
 export class CartListComponent implements OnInit, DoCheck {
-  cartItems: CartItem[];
+  get cartItems(): CartItem[] {
+    return this.cartService.getCartItems();
+  }
   differ: any;
   constructor(private cartService: CartService, private differs: IterableDiffers) { }
 
   ngOnInit() {
-    this.cartItems = this.cartService.getCartItems();
     this.differ = this.differs.find(this.cartItems).create(null);
   }
 
@@ -23,7 +24,7 @@ export class CartListComponent implements OnInit, DoCheck {
   }
 
   discard() {
-    this.cartItems.splice(0, this.cartItems.length);
+    this.cartService.clearCart();
   }
 
   getTotalPrice() {
