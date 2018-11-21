@@ -7,6 +7,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProductModule } from '../product/product.module';
 import { CartModule } from '../cart/cart.module';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -16,6 +17,7 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
     imports: [
         FlexLayoutModule,
         MaterialModule,
+        SharedModule,
         ProductModule,
         CartModule
     ],

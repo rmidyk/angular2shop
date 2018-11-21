@@ -12,3 +12,8 @@ Fixed Issues
 Reorganize project structure 
 Created CartListItem component
 Added Shared and Core modules
+
+
+## Task 3
+
+Created LocalStorageService, ConfigOptionsService, ConstantsService, GeneratorService, ContactUsComponent
