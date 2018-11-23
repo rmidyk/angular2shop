@@ -17,3 +17,7 @@ Added Shared and Core modules
 ## Task 3
 
 Created LocalStorageService, ConfigOptionsService, ConstantsService, GeneratorService, ContactUsComponent
+
+## Task 4
+
+Added pipes for formatting pruduct price(ProductListItemComponent,CartListComponent, CartListItemComponent), uppercase product category (ProductListItemComponent), async pipe (ProductListComponent), created OrderBy pipe (ProductListComponent, CartListComponent)

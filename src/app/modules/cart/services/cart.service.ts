@@ -16,14 +16,23 @@ export class CartService {
     return this.cartItems;
   }
 
+  getSortProperties() {
+    return [
+      { propertyName: 'price', displayName: 'Price' },
+      { propertyName: 'name', displayName: 'Name' },
+      { propertyName: 'quantity', displayName: 'Amount' }];
+  }
+
   addProductToCart(product: IProductModel, quantity: number = 1) {
-    var cartItem = this.cartItems.find(x => x.product == product);
+    var cartItem = this.cartItems.find(x => x.productId == product.id);
     if (cartItem) {
       cartItem.quantity += quantity;
     } else {
       cartItem = new CartItem();
+      cartItem.productId = product.id;
       cartItem.quantity = quantity;
-      cartItem.product = product;
+      cartItem.name = product.name;
+      cartItem.price = product.price;
       this.cartItems.push(cartItem);
     }
   }
@@ -36,7 +45,7 @@ export class CartService {
   getTotalPrice() {
     var totalPrice = 0;
     this.cartItems.forEach(x => {
-      totalPrice += x.quantity * x.product.price;
+      totalPrice += x.quantity * x.price;
     });
     return totalPrice;
   }

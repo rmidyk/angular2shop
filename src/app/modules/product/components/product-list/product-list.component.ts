@@ -10,7 +10,7 @@ import { Category } from '../../enums/category.enum';
   styleUrls: ['./product-list.component.less']
 })
 export class ProductListComponent implements OnInit, AfterViewInit {
-  products: IProductModel[];
+  products: Promise<IProductModel[]>;
   constructor(private productService: ProductService, private cartService: CartService) { }
   ngOnInit() {
     this.products = this.productService.getProducts();

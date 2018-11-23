@@ -7,7 +7,7 @@
       [(ngModel)]="model.quantity">
   </mat-form-field>
   <div>
-    {{model.product.name}} - {{model.product.price}}$
+    {{model.name}} - {{model.price | currency}}
   </div>
   <button mat-icon-button
     (click)="onClick()">

@@ -13,10 +13,16 @@ export class CartListComponent implements OnInit, DoCheck {
     return this.cartService.getCartItems();
   }
   differ: any;
+  p = new CartItem();
+  sortProperties = [];
+  selectedProperty: any;
+
   constructor(private cartService: CartService, private differs: IterableDiffers) { }
 
   ngOnInit() {
     this.differ = this.differs.find(this.cartItems).create(null);
+    this.sortProperties = this.cartService.getSortProperties();
+    this.selectedProperty = this.sortProperties[0].propertyName;
   }
 
   confirm() {

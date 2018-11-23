@@ -4,6 +4,7 @@ import { MaterialModule } from '../shared/material.module';
 
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductListItemComponent } from './components/product-list-item/product-list-item.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { ProductListItemComponent } from './components/product-list-item/product
         ProductListItemComponent,
     ],
     imports: [
-        MaterialModule
+        MaterialModule,
+        SharedModule
     ],
     exports: [
         ProductListComponent

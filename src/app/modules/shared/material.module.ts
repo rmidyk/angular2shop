@@ -5,7 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { MatCardModule, MatButtonModule, MatDividerModule, MatListModule, MatIconModule, MatToolbarModule } from '@angular/material';
 import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatSidenavModule } from '@angular/material/sidenav'
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { MatSidenavModule } from '@angular/material/sidenav'
         MatInputModule,
         MatIconModule,
         MatSidenavModule,
-        MatToolbarModule
+        MatToolbarModule,
+        MatSelectModule
     ],
     exports: [
         BrowserAnimationsModule,
@@ -33,7 +35,8 @@ import { MatSidenavModule } from '@angular/material/sidenav'
         MatInputModule,
         MatIconModule,
         MatSidenavModule,
-        MatToolbarModule
+        MatToolbarModule,
+        MatSelectModule
     ]
 })
 export class MaterialModule { }

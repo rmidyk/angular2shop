@@ -1,6 +1,6 @@
-import { IProductModel } from '../../product/models/product.model';
-
 export class CartItem {
+    productId: number;
+    name: string;
     quantity: number;
-    product: IProductModel;
+    price: number;
 }
