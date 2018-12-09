@@ -1,0 +1,25 @@
+<nav mat-tab-nav-bar>
+  <a mat-tab-link
+    routerLink="/admin"
+    routerLinkActive
+    #rla="routerLinkActive"
+    active="rla.isActive">
+    Dashboard
+  </a>
+  <a mat-tab-link
+    routerLink="orders"
+    routerLinkActive
+    #rla="routerLinkActive"
+    active="rla.isActive">
+    Orders
+  </a>
+  <a mat-tab-link
+    routerLink="products"
+    routerLinkActive
+    #rla="routerLinkActive"
+    active="rla.isActive">
+    Products
+  </a>
+</nav>
+
+<router-outlet></router-outlet>

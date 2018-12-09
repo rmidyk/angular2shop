@@ -1,0 +1,58 @@
+<mat-horizontal-stepper #stepper>
+  <mat-step completed="true">
+    <form>
+      <ng-template matStepLabel>Edit your order</ng-template>
+      <app-cart></app-cart>
+      <div>
+        <button mat-button
+          matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="infoFormGroup">
+    <form [formGroup]="infoFormGroup"
+      fxLayout="column">
+      <ng-template matStepLabel>Fill out your contact information</ng-template>
+      <mat-form-field>
+        <input matInput
+          placeholder="First Name"
+          formControlName="firstName"
+          required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput
+          placeholder="Last Name"
+          formControlName="lastName"
+          required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput
+          placeholder="Address"
+          formControlName="address"
+          required>
+      </mat-form-field>
+      <div>
+        <button mat-button
+          matStepperPrevious>Back</button>
+        <button mat-button
+          matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="paymentFormGroup">
+    <form [formGroup]="paymentFormGroup" fxLayout="column">
+      <ng-template matStepLabel>Payment</ng-template>
+      <mat-form-field>
+        <input matInput
+          placeholder="Card Number"
+          formControlName="cardNumber"
+          required>
+      </mat-form-field>
+      <button mat-button>Pay</button>
+      <div>
+        <button mat-button
+          matStepperPrevious>Back</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>

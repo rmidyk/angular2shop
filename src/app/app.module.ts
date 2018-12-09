@@ -3,12 +3,18 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { ConstantsService, ConstantsServiceInstance } from './modules/core/services/constants.service'
+import { ConstantsService, ConstantsServiceInstance } from './core/services/constants.service'
 
-import { CoreModule } from './modules/core/core.module';
-import { SharedModule } from './modules/shared/shared.module';
-import { ProductModule } from './modules/product/product.module';
-import { CartModule } from './modules/cart/cart.module';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+import { ProductsModule } from './products/products.module';
+import { CartModule } from './cart/cart.module';
+import { LayoutModule } from './layout/layout.module';
+import { AppRoutingModule } from './app-routing.module';
+import { MaterialModule } from './material/material.module';
+import { FormsModule } from '@angular/forms';
+import { AdminModule } from './admin/admin.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -16,8 +22,16 @@ import { CartModule } from './modules/cart/cart.module';
     AppComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
-    CoreModule
+    FormsModule,
+    MaterialModule,
+    CoreModule,
+    LayoutModule,
+    ProductsModule,
+    CartModule,
+    /*LAZY LOADING AdminModule, */
+    AppRoutingModule
   ],
   providers: [
     { provide: ConstantsService, useValue: ConstantsServiceInstance }

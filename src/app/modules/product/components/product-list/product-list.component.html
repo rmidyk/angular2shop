@@ -1,5 +1,0 @@
-<div fxLayout="row wrap">
-  <app-product-list-item *ngFor="let product of products | async | orderBy : 'isAvailable'"
-    [model]="product"
-    (buy)="onBuy($event)"></app-product-list-item>
-</div>

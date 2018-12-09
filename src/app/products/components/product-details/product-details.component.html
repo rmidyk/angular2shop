@@ -1,0 +1,31 @@
+<div *ngIf="product">
+  <h2>{{product.name}}</h2>
+  <h5>45 comments</h5>
+</div>
+
+<!-- <a mat-tab-link
+*ngFor="let link of navLinks"
+[routerLink]="feedback"
+routerLinkActive #rla="routerLinkActive"
+[active]="rla.isActive">
+{{link.label}}
+</a> -->
+
+<nav mat-tab-nav-bar>
+  <a mat-tab-link
+    routerLink="photo"
+    routerLinkActive
+    #rla="routerLinkActive"
+    active="rla.isActive">
+    Photos
+  </a>
+  <a mat-tab-link
+    routerLink="feedback"
+    routerLinkActive
+    #rla="routerLinkActive"
+    active="rla.isActive">
+    Feedback
+  </a>
+</nav>
+
+<router-outlet></router-outlet>

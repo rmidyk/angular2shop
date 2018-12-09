@@ -1,0 +1,21 @@
+<mat-card class="product-card">
+  <mat-card-header style="text-align: left;">
+    <mat-card-title>{{model.name}} - {{model.price | currency}}</mat-card-title>
+    <mat-card-subtitle>{{getCategoryName() | uppercase}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image
+    src="{{model.imageUrl}}"
+    alt="Photo of Product">
+  <mat-card-content>
+    <p>
+      {{model.description}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button
+      [disabled]="isDisabled()"
+      (click)="onClick()">Buy</button>
+      <button mat-button
+      (click)="onDetailsButtonClick()">Details</button>
+  </mat-card-actions>
+</mat-card>

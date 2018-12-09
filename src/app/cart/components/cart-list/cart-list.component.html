@@ -1,0 +1,31 @@
+<mat-form-field *ngIf="cartItems.length">
+  <mat-select placeholder="Order by:"
+    [(ngModel)]="selectedProperty">
+    <mat-option *ngFor="let property of sortProperties"
+      [value]="property.propertyName">
+      {{property.displayName}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div *ngIf="cartItems.length; else elseBlock">
+  <mat-list style="text-align: left;">
+    <app-cart-list-item *ngFor="let cartItem of cartItems | orderBy : selectedProperty"
+      [model]="cartItem"
+      (remove)="onRemove($event)"
+      appMouseHover>
+    </app-cart-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+      <div fxLayout="row"
+        fxLayoutAlign="space-between"
+        style="width: 100%;">
+        <div>Products: {{getProductsAmount()}}</div>
+        <div>Total: {{getTotalPrice() | currency}}</div>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</div>
+<ng-template #elseBlock>
+  Empty Cart!
+</ng-template>
