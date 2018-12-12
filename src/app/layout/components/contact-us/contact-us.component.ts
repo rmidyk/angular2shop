@@ -1,5 +1,5 @@
 import { Component, OnInit, Optional, Inject } from '@angular/core';
-import { ConfigOptionsService } from '../../../core/services/config-options.service';
+import { AppSettingsService } from '../../../core/services/app-settings.service';
 import { ConstantsService } from '../../../core/services/constants.service';
 import { LocalStorageService } from '../../../core/services/local-storage.service';
 import { GeneratorService } from '../../../core/services/generate.service';
@@ -16,7 +16,7 @@ export class ContactUsComponent implements OnInit {
   app: string;
   version: string;
   token: string;
-  constructor(@Optional() private configService: ConfigOptionsService,
+  constructor(@Optional() private appSettingsService: AppSettingsService,
     private constantsService: ConstantsService,
     private localStorageService: LocalStorageService,
     @Inject('token') private randomToken: string) { }

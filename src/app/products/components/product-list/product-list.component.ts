@@ -1,9 +1,10 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { ProductService } from '../../services/product.service';
 import { CartService } from '../../../cart/services/cart.service';
 import { IProductModel } from '../../models/product.model';
 import { Category } from '../../enums/category.enum';
 import { Router } from '@angular/router';
+import { ProductHttpService } from '../../services/product-http.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
@@ -11,13 +12,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./product-list.component.less']
 })
 export class ProductListComponent implements OnInit, AfterViewInit {
-  products: Promise<IProductModel[]>;
+  products$: Observable<IProductModel[]>;
   constructor(
-    private productService: ProductService,
+    private productHttpService: ProductHttpService,
     private cartService: CartService,
     private router: Router) { }
+
   ngOnInit() {
-    this.products = this.productService.getProducts();
+    this.products$ = this.productHttpService.getProducts();
   }
   onBuy(product: IProductModel) {
     this.cartService.addProductToCart(product);

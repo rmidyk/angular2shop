@@ -10,6 +10,7 @@ import { ProductsComponent } from './products.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ProductDetailsFeedbackComponent } from './components/product-details-feedback/product-details-feedback.component';
 import { ProductDetailsPhotosComponent } from './components/product-details-photos/product-details-photos.component';
+import { ProductsServicesModule } from './products-services.module';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ProductDetailsPhotosComponent } from './components/product-details-phot
     imports: [
         MaterialModule,
         SharedModule,
+        ProductsServicesModule,
         ProductsRoutingModule
     ]/* ,
     exports: [

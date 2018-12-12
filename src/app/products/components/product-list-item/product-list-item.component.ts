@@ -25,7 +25,7 @@ export class ProductListItemComponent implements OnInit {
   }
 
   getCategoryName() {
-    return Category[this.model.category];
+    return this.model.category;
   }
 
   onClick() {

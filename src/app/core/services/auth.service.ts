@@ -6,7 +6,7 @@ import { delay, tap } from 'rxjs/operators';
 import { CoreModule } from '../core.module';
 
 @Injectable({
-  providedIn: CoreModule
+  providedIn: 'root'
 })
 export class AuthService {
   isLoggedIn = false;

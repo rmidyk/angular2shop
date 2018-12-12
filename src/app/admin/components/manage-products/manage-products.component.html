@@ -1,3 +1,16 @@
-<p>
-  manage-products works!
-</p>
+<button mat-button
+  (click)="create()">Create</button>
+<mat-list>
+  <mat-list-item *ngFor="let product of products$ | async">
+    <mat-icon matListIcon>folder</mat-icon>
+    <h3 matLine>#{{product.id}} - {{product.name}} </h3>
+    <p matLine>
+      <span> {{product.price}} </span>
+      <span class="demo-2"> -- {{product.description}} </span>
+    </p>
+    <button mat-button
+      (click)="edit(product)">Edit</button>
+    <button mat-button
+      (click)="remove(product)">Remove</button>
+  </mat-list-item>
+</mat-list>

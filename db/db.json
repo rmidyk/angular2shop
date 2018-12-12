@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Harley-Davidson Fat Bob 2019",
+      "description": "The Fat Bob® motorcycle features aggressive, unapologetic styling, mind-blowing performance and handling, premium finishes, and the massive torque of the Milwaukee-Eight® engine.",
+      "imageUrl": "https://www.harley-davidson.com/content/dam/h-d/images/motorcycles/my19/softail/fat-bob/gallery/dom/19-softail-fat-bob-gallery-1.jpg?impolicy=myresize&rw=1137",
+      "price": "17005",
+      "isAvailable": true,
+      "category": "chopper"
+    },
+    {
+      "id": 2,
+      "name": "KTM 790 ADVENTURE R 2019",
+      "description": "Developed from KTM’s offroad race DNA, the 790 ADVENTURE R is a serious offroad motorcycle equipped for extreme terrain. With the hardcore adventurer in mind, it balances the power of a twin, with the lightness and agility of a single-cylinder offroad bike, to open up new riding possibilities.",
+      "imageUrl": "https://www.ktm.com/globalassets/products-pim-data/ke2-motorcycles/travel/790-adventure-r/790-adventure-r-2019/f9603s3/pho_bike_90_re.png",
+      "price": 10000,
+      "isAvailable": false,
+      "category": "enduro"
+    },
+    {
+      "id": 3,
+      "name": "BMW F 650GS 2008",
+      "description": "The F650GS had several advanced technology features for its time, with computer-controlled fuel injection, catalytic converter, a Nikasil-lined cylinder, optional ABS and an airbox designed to exploit the airflow pattern of the bike when in motion.",
+      "imageUrl": "https://cdn3.riastatic.com/photosnew/auto/photo/bmw_f-650gs__250751053fx.webp",
+      "price": 5000,
+      "isAvailable": false,
+      "category": "allround"
+    },
+    {
+      "id": 4,
+      "name": "KTM 690 SMC R 2019",
+      "description": "The KTM 690 SMC R raises the bar for street hooligans. The revised chassis and styling are boosted by the latest 690 LC4 motor and an updated electronics package, so whether you express your tarmac-sliding talent on mountain roads or on the track, you’ll be drifting into the future with a maxed-out grin and your veins coursing with adrenaline.",
+      "imageUrl": "https://topkarting.ru/wp-content/uploads/2017/06/%D0%9A%D0%A2%D0%9C-690-%D1%8D%D0%BD%D0%B4%D1%83%D1%80%D0%BE-492x280.png",
+      "price": 3000,
+      "isAvailable": true,
+      "category": "supermoto"
+    }
+  ]
+}

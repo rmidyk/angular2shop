@@ -1,0 +1,50 @@
+<form *ngIf="model"
+  #productForm="ngForm"
+  (ngSubmit)="onSubmit()"
+  class=product-form>
+  <mat-form-field class="full-width">
+    <input matInput
+      placeholder="Name"
+      required
+      [(ngModel)]="model.name"
+      name="name"
+      #name="ngModel">
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <input matInput
+      placeholder="Price"
+      required
+      [(ngModel)]="model.price"
+      name="price">
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <textarea matInput
+      placeholder="Description"
+      required
+      [(ngModel)]="model.description"
+      name="description"></textarea>
+  </mat-form-field>
+  <mat-form-field class="full-width">
+      <input matInput
+      placeholder="Category"
+      required
+      [(ngModel)]="model.category"
+      name="category">
+  </mat-form-field>
+  <mat-form-field class="full-width">
+      <input matInput
+      placeholder="ImageUrl"
+      required
+      [(ngModel)]="model.imageUrl"
+      name="imageUrl">
+  </mat-form-field>
+  <section class="example-section">
+    <mat-checkbox class="example-margin"
+      [(ngModel)]="model.isAvailable"
+      name="isAvailable">Active</mat-checkbox>
+  </section>
+  <mat-divider></mat-divider>
+  <button type="submit"
+    class="btn btn-success"
+    [disabled]="!productForm.form.valid">Submit</button>
+</form>

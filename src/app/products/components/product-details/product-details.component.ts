@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../../services/product.service';
 import { Route, ActivatedRoute, Params } from '@angular/router';
 import { IProductModel } from '../../models/product.model';
 import { switchMap } from 'rxjs/operators';
 import { PARAMETERS } from '@angular/core/src/util/decorators';
+import { ProductHttpService } from '../../services/product-http.service';
 
 @Component({
   selector: 'app-product-details',
@@ -12,12 +12,12 @@ import { PARAMETERS } from '@angular/core/src/util/decorators';
 })
 export class ProductDetailsComponent implements OnInit {
   product: IProductModel;
-  constructor(private productService: ProductService,
+  constructor(private productHttpService: ProductHttpService,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.paramMap
-      .pipe(switchMap((params: Params) => this.productService.getProduct(params.get('productId'))))
+      .pipe(switchMap((params: Params) => this.productHttpService.getProduct(params.get('productId'))))
       .subscribe(
         data => this.product = { ...data },
         err => console.log(err));

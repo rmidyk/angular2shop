@@ -15,6 +15,8 @@ import { MaterialModule } from './material/material.module';
 import { FormsModule } from '@angular/forms';
 import { AdminModule } from './admin/admin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RequestTimeInterceptor } from './core/interceptors/request-time.interceptor';
 
 
 @NgModule({
@@ -31,10 +33,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProductsModule,
     CartModule,
     /*LAZY LOADING AdminModule, */
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [
-    { provide: ConstantsService, useValue: ConstantsServiceInstance }
+    { provide: ConstantsService, useValue: ConstantsServiceInstance },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestTimeInterceptor,
+      multi: true,
+    }
+
   ],
   bootstrap: [AppComponent]
 })
